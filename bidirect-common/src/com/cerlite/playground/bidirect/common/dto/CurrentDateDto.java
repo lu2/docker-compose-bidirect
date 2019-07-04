@@ -1,4 +1,4 @@
-package com.cerlite.playground.bidirecta;
+package com.cerlite.playground.bidirect.common.dto;
 
 public class CurrentDateDto {
 
