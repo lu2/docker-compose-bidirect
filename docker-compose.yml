@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  bidirect-a:
+    build: ./bidirect-a
+    ports:
+      - "8082:8080"
+#    networks:
+#      intra:
+#        aliases:
+#          - "docker.local"
+    extra_hosts:
+      - "docker.local:192.168.99.100" #Docker Machine IP
+
+  bidirect-b:
+    build: ./bidirect-b
+    ports:
+      - "8081:8080"
+#    networks:
+#      intra:
+    extra_hosts:
+      - "docker.local:192.168.99.100" #Docker Machine IP
+
+#networks:
+#  intra:
