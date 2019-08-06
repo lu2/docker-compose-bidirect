@@ -2,11 +2,15 @@ version: '3'
 
 services:
   bidirect-a:
-    build: ./bidirect-a
-    image: bidirect-a:latest
+    build:
+      context: ./bidirect-a
+      args:
+        A_VERSION: ${A_VERSION}
+    env_file: .env
+    image: bidirect-a:${A_VERSION}
     container_name: bidirect-a
     ports:
-      - "8082:8080"
+      - "${A_PORT}:8080"
 #    networks:
 #      intra:
 #        aliases:
@@ -15,11 +19,15 @@ services:
 #      - "docker.local:192.168.99.100" #Docker Machine IP
 
   bidirect-b:
-    build: ./bidirect-b
-    image: bidirect-b:latest
+    build:
+      context: ./bidirect-b
+      args:
+        B_VERSION: ${B_VERSION}
+    env_file: .env
+    image: bidirect-b:${B_VERSION}
     container_name: bidirect-b
     ports:
-      - "8081:8080"
+      - "${B_PORT}:8080"
 #    networks:
 #      intra:
     extra_hosts:
