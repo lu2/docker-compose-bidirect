@@ -9,8 +9,8 @@ services:
 #      intra:
 #        aliases:
 #          - "docker.local"
-    extra_hosts:
-      - "docker.local:192.168.99.100" #Docker Machine IP
+#    extra_hosts:
+#      - "docker.local:192.168.99.100" #Docker Machine IP
 
   bidirect-b:
     build: ./bidirect-b
@@ -19,7 +19,7 @@ services:
 #    networks:
 #      intra:
     extra_hosts:
-      - "docker.local:192.168.99.100" #Docker Machine IP
+      - "docker.local:192.168.56.1" #Docker Machine IP
 
 #networks:
 #  intra:
