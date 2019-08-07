@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bidirect-a:
+    build:
+      context: ./bidirect-host-routing
+    environment:
+      SRC_PORT: ${A_PORT}
+      DST_PORT: ${A_PORT}
+    cap_add:
+      - NET_ADMIN
+    tty: true
+    image: bidirect-a-host-routing

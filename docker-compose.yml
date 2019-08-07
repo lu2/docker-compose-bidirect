@@ -11,12 +11,10 @@ services:
     container_name: bidirect-a
     ports:
       - "${A_PORT}:8080"
-#    networks:
-#      intra:
-#        aliases:
-#          - "docker.local"
-#    extra_hosts:
-#      - "docker.local:192.168.99.100" #Docker Machine IP
+    networks:
+      intra:
+        aliases:
+          - "bidirect-a.local"
 
   bidirect-b:
     build:
@@ -28,10 +26,8 @@ services:
     container_name: bidirect-b
     ports:
       - "${B_PORT}:8080"
-#    networks:
-#      intra:
-    extra_hosts:
-      - "docker.local:192.168.56.1" #Docker Machine IP
+    networks:
+      intra:
 
-#networks:
-#  intra:
+networks:
+  intra:

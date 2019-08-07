@@ -1,5 +1,0 @@
-version: '3'
-
-services:
-  bidirect-a:
-    entrypoint: ["echo", "bidirect-a disabled"]
